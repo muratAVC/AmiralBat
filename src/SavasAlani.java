@@ -22,27 +22,26 @@ public class SavasAlani {
     }
     public String isabet(int x,int y){
         //isabet hangi gemiye olmuş
-        if (!amiral.isabetVarmi(x,y).equals("karavana")){
+        String result;
+        if (!amiral.isabetVarmi(x,y)){
             this.kalanGemiParcasi--;
-            return "Amiral";
-        }
-        if (!kuruvazor.isabetVarmi(x,y).equals("karavana")){
+            result="Amiral";
+        }else if (!kuruvazor.isabetVarmi(x,y)){
             this.kalanGemiParcasi--;
-            return "Kuruvazor";
-        }
-        if (!hucumBot.isabetVarmi(x,y).equals("karavana")){
+            result= "Kuruvazor";
+        }else if (!hucumBot.isabetVarmi(x,y)){
             this.kalanGemiParcasi--;
-            return "Hucumbot";
-        }
-        if (!muhrip1.isabetVarmi(x,y).equals("karavana")){
+            result="Hucumbot";
+        }else if (!muhrip1.isabetVarmi(x,y)){
             this.kalanGemiParcasi--;
-            return "Muhrip1";
-        }
-        if (!muhrip2.isabetVarmi(x,y).equals("karavana")){
+            result= "Muhrip1";
+        }else if (!muhrip2.isabetVarmi(x,y)){
             this.kalanGemiParcasi--;
-            return "Muhrip2";
+            result= "Muhrip2";
+        }else{
+            result= "karavana";
         }
-        return "karavana";
+        return result;
     }
 
     public void gemiYerlestir(){

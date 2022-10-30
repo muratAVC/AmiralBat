@@ -62,11 +62,11 @@ public class Gemi {
      return asd;
     }
 
-    public String isabetVarmi(int x,int y){
-        String result="karavana";
+    public boolean isabetVarmi(int x,int y){
+        boolean result=false;
         if(shipCoordinat[x][y]=="X"){
-            result=this.shipName;
-            shipCoordinat[x][y]="*";
+            result=true;
+            shipCoordinat[x][y]="*";//geminin vurulan yerini gösterir
         }
 
         return result;
