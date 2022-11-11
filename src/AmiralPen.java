@@ -9,7 +9,7 @@ public class AmiralPen {
      public AmiralPen() {
         JFrame pencere = new JFrame("Amiral Battı");
         pencere.setSize(500, 500);
-        pencere.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //pencere.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pencere.getContentPane().setLayout(new BorderLayout());
 
          JMenuBar mb = new JMenuBar();
@@ -21,7 +21,7 @@ public class AmiralPen {
          JMenuItem m22 = new JMenuItem("Farklı Kaydet");
          m1.add(m11);
          m1.add(m22);
-         m2.addActionListener(new ActionListener() {
+         m22.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
                  YardimPen Yardim= new YardimPen();
