@@ -13,8 +13,8 @@ public class YardimPen {
         YarPen.getContentPane().setLayout(new BorderLayout());
 
         JLabel metin = new JLabel("Amiral battı oyununa hoşgeldiniz" +
-                "\"Oyun 10*10 luk bir savaş alanında oynanır\\n\" +\n" +
-                "\"Alanda 5 adet gemi var.\\nBunlar\\n\" +\"1 Adet Amiral gemisi\\n1 Adet kuruvazor\\n1 Adet hücumbot\\n2 Adet muhrip\\n\"+\n" +
+                "\"Oyun 10*10 luk bir savaş alanında oynanır\n" +
+                "\"Alanda 5 adet gemi var.\nBunlar\n 1 Adet Amiral gemisi\n 1 Adet kuruvazor\n1 Adet hücumbot\\n2 Adet muhrip\\n\"+\n" +
                 "\"Gemiler savaş alanına rastgele yerleştirilmiştir.\\nAttığınız füzelerin hedef koordinatlarını vererek gemileri batırmaya çalışın\\n\" +\n" +
                 "\"Bir gemiyi batırmak için onu tamamen atışlarınızla isabet ettirmelisiniz.\\nBaşarılar\"");
         metin.setFont(new Font("Serif", Font.BOLD, 25));
