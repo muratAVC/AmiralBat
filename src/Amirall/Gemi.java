@@ -1,3 +1,5 @@
+package Amirall;
+
 import java.util.Random;
 
 public class Gemi {
@@ -15,7 +17,7 @@ public class Gemi {
         this.shipTall=tall;
         this.live=tall;
         this.status=true;//geminin batıp batmadığını tutuyor
-        this.shipCoordinat= reset();
+        this.shipCoordinat = reset();
     }
 
     public void gemiKoordinatAta(){
@@ -27,12 +29,12 @@ public class Gemi {
 
             this.shipLokasyon_X=rnd.nextInt(0,10);//dikey Konum
             this.shipLokasyon_Y=rnd.nextInt(0,(10-this.shipTall)+1);//Yatay konum
-            this.yat_dik=true;
+            this.yat_dik=false;
             yerles(this.shipLokasyon_X,this.shipLokasyon_Y,this.yat_dik);
         }else {//gemi dikey Konumda ise
             this.shipLokasyon_X= rnd.nextInt(0,(10-this.shipTall)+1);
             this.shipLokasyon_Y= rnd.nextInt(0,10);
-            this.yat_dik=false;
+            this.yat_dik=true;
             yerles(this.shipLokasyon_X,this.shipLokasyon_Y,this.yat_dik);
         }
     }
@@ -41,7 +43,7 @@ public class Gemi {
 
       private void yerles(int a,int b,boolean y){
 //gemileri koordinat düzlemine yerleştiriyor
-        if (!y) {//
+        if (y) {//
             for (int i = a; i < this.shipTall+a; i++) {
                 this.shipCoordinat[i][b] = "X";
             }
@@ -53,13 +55,13 @@ public class Gemi {
 
     }
     public String[][] reset(){
-        String[][] asd =new String[10][10];
+        String[][] result =new String[10][10];
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
-                asd[i][j]=".";
+                result[i][j]=".";
             }
         }
-     return asd;
+     return result;
     }
 
     public boolean isabetVarmi(int x,int y){
@@ -67,10 +69,19 @@ public class Gemi {
         if(shipCoordinat[x][y]=="X"){
             result=true;
             shipCoordinat[x][y]="*";//geminin vurulan yerini gösterir
+            this.live--;
         }
+        
 
         return result;
 
+    }
+    public boolean gemiBattimi() {
+    	boolean result=false;
+    	if(this.live==0) {
+    		result=true;
+    	}
+    	return result;
     }
 
 

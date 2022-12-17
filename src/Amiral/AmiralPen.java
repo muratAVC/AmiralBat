@@ -1,3 +1,5 @@
+package Amiral;
+
 import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -6,7 +8,8 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 public class AmiralPen {
-     public AmiralPen() {
+     @SuppressWarnings("deprecation")
+	public AmiralPen() {
         JFrame pencere = new JFrame("Amiral Battı");
         pencere.setSize(500, 500);
         pencere.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,14 +31,13 @@ public class AmiralPen {
 
              }
          });
-
          pencere.add("North",mb);
 
 
 
         JLabel metin = new JLabel("Amiral battı oyununa hoşgeldiniz");
         metin.setFont(new Font("Serif", Font.BOLD, 25));
-        pencere.add("West", metin);
+        pencere.add("North", metin);
 
         JButton buton = new JButton("Çıkış");
         buton.addActionListener(new ActionListener() {
@@ -44,7 +46,18 @@ public class AmiralPen {
             }
         });
         pencere.add("South", buton);
+        
+        JButton a1 = new JButton("a1");
+        
+        pencere.add(a1);
+       /* JButton a2 = new JButton("a2");
+        pencere.add(a2);
+        JButton a3 = new JButton("a3");
+        pencere.add(a3);
+        JButton a4 = new JButton("a4");
+        pencere.add(a4);*/
 
+        
         pencere.setVisible(true);
     }
 

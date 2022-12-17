@@ -1,3 +1,5 @@
+package Amirall;
+
 import java.util.Random;
 
 public class SavasAlani {
@@ -7,35 +9,56 @@ public class SavasAlani {
     Gemi hucumBot;
     Gemi muhrip1;
     Gemi muhrip2;
+    public Gemi[] gemi;
+    
     int kalanGemiParcasi=17;
 
 
     public  SavasAlani(int heigth,int weigth) {
         savasAlan=new String[heigth][weigth];
+        gemi=new Gemi[5];
+        
 
         amiral=new Gemi("Amiral",5);
         kuruvazor=new Gemi("Kuruvazor",4);
         hucumBot=new Gemi("Hucumbot",2);
         muhrip1=new Gemi("Muhrip",3);
         muhrip2=new Gemi("Muhrip",3);
+        /*gemi[0]=amiral;
+        gemi[1]=kuruvazor;
+        gemi[2]=hucumBot;
+        gemi[3]=muhrip1;
+        gemi[4]=muhrip2;*/
+        
+        
         savasAlan=amiral.reset();
+    }
+    
+    public boolean isabetKontrol(int x, int y) {
+    	boolean result=false;
+    	if(amiral.isabetVarmi(x, y)) {
+    		System.err.println("selam");
+    	}
+    	
+    	return result;
     }
     public String isabet(int x,int y){
         //isabet hangi gemiye olmuş
         String result;
-        if (!amiral.isabetVarmi(x,y)){
+        
+        if (amiral.isabetVarmi(x,y)){
             this.kalanGemiParcasi--;
             result="Amiral";
-        }else if (!kuruvazor.isabetVarmi(x,y)){
+        }else if (kuruvazor.isabetVarmi(x,y)){
             this.kalanGemiParcasi--;
             result= "Kuruvazor";
-        }else if (!hucumBot.isabetVarmi(x,y)){
+        }else if (hucumBot.isabetVarmi(x,y)){
             this.kalanGemiParcasi--;
             result="Hucumbot";
-        }else if (!muhrip1.isabetVarmi(x,y)){
+        }else if (muhrip1.isabetVarmi(x,y)){
             this.kalanGemiParcasi--;
             result= "Muhrip1";
-        }else if (!muhrip2.isabetVarmi(x,y)){
+        }else if (muhrip2.isabetVarmi(x,y)){
             this.kalanGemiParcasi--;
             result= "Muhrip2";
         }else{
