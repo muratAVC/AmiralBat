@@ -1,5 +1,7 @@
 package Amirall;
 
+import javax.swing.*;
+import java.awt.*;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -15,6 +17,10 @@ public class AmiralBatti {
         }
     }
     public static void main(String[] args) {
+       AmiralPen amiralPen=new AmiralPen();
+
+
+
         Scanner in=new Scanner(System.in);
         SavasAlani area1=new SavasAlani(10,10);
         area1.gemiYerlestir();
