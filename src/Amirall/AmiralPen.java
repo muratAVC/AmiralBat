@@ -5,7 +5,9 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 public class AmiralPen {
-    JFrame frame;
+    public static JFrame frame;
+    public static JTable table;
+
     AmiralPen(){
         frame=new JFrame("Amiral Battı");
         JButton button=new JButton("Atış Yap");
@@ -22,9 +24,9 @@ public class AmiralPen {
 
         button.setBounds(140,20,100,19);
 
-        JTable table=new JTable(10,10);
-        table.setRowHeight(10);
-        table.setBounds(10,50,150,100);
+        table=new JTable(10,10);
+        table.setRowHeight(20);
+        table.setBounds(10,50,250,250);
         table.setCellSelectionEnabled(true);
 
 
@@ -34,8 +36,11 @@ public class AmiralPen {
         selectionModel.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-
-                System.out.println();
+                int row=table.getSelectedRow();
+                int colum=table.getSelectedColumn();
+//                textField.setText((row+1)+"");
+//                textField1.setText((colum+1)+"");
+                //table.setValueAt("O",row,colum);
             }
         });
 
